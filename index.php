@@ -43,7 +43,7 @@
                 <!-- Menu navigation -->
                 <div id="menu-navigation">
                     <nav>
-                        <li><a href="#">MMI D'OR</a></li>
+                        <li><a href="" id="accueil">MMI D'OR</a></li>
                         <li><a href="#film">FILMS</a></li>
                         <li><a href="#planning">PLANNING</a></li>
                         <li><a href="#concours">CONCOURS</a></li>
@@ -73,6 +73,7 @@
                             <div id="home-live-twitch">
                                 <div id="twitch-embed"></div>
                             </div>
+                            <a href="#arrive-scroll" class="scroll-horizontal" id="mmi_button"></a>
                             <div id="home-presentation">
                                 <div id="home-presentation-contain">
                                     <h3 id="title-home" class="gold-underline">Les MMI <span class="text-title-gold">d'Or</span> ?</h3>
@@ -84,6 +85,7 @@
                                     </div>
                                 </div>                                
                             </div>
+                            <div id="arrive-scroll"></div>
                         </div>
                         <div id="section-films">
                             <div class="body-section">
@@ -249,10 +251,13 @@
             width: "100%",
             height: 600,
             channel: "VanSkull",
-            theme: "dark",
+            theme: "light",
           });
         </script>
     </body>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/active.js"></script>
+    <script type="text/javascript" src="js/scroll.js"></script>
+    
+
 </html>
