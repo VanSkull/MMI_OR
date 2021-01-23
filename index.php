@@ -106,7 +106,7 @@
                                                             <div class='film-poster-vote'>
                                                                 <a href='vote.php?id=". $line['id'] ."'>VOTER</a>
                                                             </div>
-                                                            <div id='poster-" . $line['title'] . "' class='film-poster-image'>
+                                                            <div id='poster-" . $line['title'] . "' class='film-poster-image' style='background-image=url(/images/affiches/" . $line['image'] . ")'>
                                                                 <div class='film-overlay-play'>
                                                                     <i class='fa fa-play'></i>
                                                                 </div>
