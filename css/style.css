@@ -34,6 +34,10 @@ body{
     width: 50%;
 }
 
+.text-title-gold{
+    color: #c6a53e;
+}
+
 #menu-navigation>nav>li{
     font-size: 2.5rem;
     margin: 15% 0 15% 10%;
@@ -196,6 +200,77 @@ body{
       left: 200vw;
   }
 
+.unable{
+    display: none;
+}
+
+.current{
+    display: block;
+}
+
+#section-films{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -1vw;
+    padding-left: 10vw;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#title-films{
+    text-transform: uppercase ;
+    color: white;
+    font-size: 8rem;
+    margin-bottom: 1.5rem;
+}
+
+#all-films{
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    width: 125vw;
+}
+
+.card-film{
+    display: flex;
+    margin: 1rem;
+    width: 35vw;
+}
+
+.film-poster{
+    display: flex;
+}
+
+#poster-2nuts{
+    width: 15rem;
+    height: 20rem;
+    background-image: url(../images/affiches/ok.jpg);
+    background-size: 100%;
+}
+
+.film-synopsis{
+    margin-left: 1rem;
+}
+
+.film-title{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.film-synopsis-text{
+    width: 100%;
+    font-size: 1.4rem;
+    text-align: justify;
+}
+
+.film-poster-vote>p{
+    position: relative;
+    top: 0;
+    left: -4rem;
+    font-size: 3rem;
+    transform: rotate(-90deg);
+	transform-origin: right top;
+}
 /**********/
 /* Règles */
 /**********/

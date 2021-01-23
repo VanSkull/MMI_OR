@@ -1,3 +1,7 @@
+<?php
+    //include('bdd.php');
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -43,11 +47,11 @@
                 <!-- Menu navigation -->
                 <div id="menu-navigation">
                     <nav>
-                        <li><a href="" id="accueil">MMI D'OR</a></li>
-                        <li><a href="#film">FILMS</a></li>
-                        <li><a href="#planning">PLANNING</a></li>
-                        <li><a href="#concours">CONCOURS</a></li>
-                        <li><a href="#contact">CONTACT</a></li>
+                        <li><a href="" id="accueil" onclick="changepage('mmidor')">MMI D'OR</a></li>
+                        <li><a href="#film" id="films" onclick="changepage('films')">FILMS</a></li>
+                        <li><a href="#planning" id="planning" onclick="changepage('planning')">PLANNING</a></li>
+                        <li><a href="#concours" id="concours" onclick="changepage('concours')">CONCOURS</a></li>
+                        <li><a href="#contact" id="contact" onclick="changepage('contact')">CONTACT</a></li>
                     </nav>
                 </div>
                 
@@ -69,7 +73,7 @@
             <div id="main-contenu">
                 <div id="contenu-body">
                     <div id="all-sections">
-                        <div id="section-home">
+                        <div id="section-home" class="unable">
                             <div id="home-live-twitch">
                                 <div id="twitch-embed"></div>
                             </div>
@@ -87,11 +91,50 @@
                             </div>
                             <div id="arrive-scroll"></div>
                         </div>
-                        <div id="section-films">
+                        <div id="section-films" class="current">
                             <div class="body-section">
                                 <h3 id="title-films" class="gold-underline">Tous les <span class="text-title-gold">films</span></h3>
                                 
                                 <div id="all-films">
+                                    <?php
+                                        /*$sql = "SELECT * FROM films";
+                                        $q = $pdo->prepare($sql);
+                                        $q->execute(array($id,$id));
+                                        while($line=$q->fetch()) {
+                                            echo "<div id=" . $line['title'] . " class='card-film'>
+                                                        <div class='film-poster'>
+                                                            <div class='film-poster-vote'>
+                                                                <a href='vote.php?id=". $line['id'] ."'>VOTER</a>
+                                                            </div>
+                                                            <div id='poster-" . $line['title'] . "' class='film-poster-image'>
+                                                                <div class='film-overlay-play'>
+                                                                    <i class='fa fa-play'></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class='film-synopsis'>
+                                                            <h4 class='film-title'>" . $line['title'] . "</h4>
+                                                            <p class='film-synopsis-text'>" . $line['synopsis'] . "</p>
+                                                        </div>
+                                                    </div>";
+                                        }*/
+                                    ?>
+                                    <div id="film-2nuts" class="card-film">
+                                        <div class="film-poster">
+                                            <div class="film-poster-vote">
+                                                <p>VOTER</p>
+                                            </div>
+                                            <div id="poster-2nuts" class="film-poster-image">
+                                                <div class="film-overlay-play">
+                                                    <i class="fa fa-play"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="film-synopsis">
+                                            <h4 class="film-title">2Nuts</h4>
+                                            <p class="film-synopsis-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                        </div>
+                                    </div>
                                     <div id="film-2nuts" class="card-film">
                                         <div class="film-poster">
                                             <div class="film-poster-vote">
@@ -159,7 +202,7 @@
                                 </div>
                             </div>                            
                         </div>
-                        <div id="section-planning">
+                        <div id="section-planning" class="unable">
                             <div class="body-section">
                                 <h3 id="title-planning" class="gold-underline">Plan<span class="text-title-gold">ning</span></h3>
                                 
@@ -195,7 +238,7 @@
                                 </table>
                             </div>                            
                         </div>
-                        <div id="section-competition">
+                        <div id="section-competition" class="unable">
                             <h3 id="title-competition" class="gold-underline">Participez à notre <span class="text-title-gold">concours</span></h3>
                             
                             <div id="competition-contain">
@@ -218,7 +261,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="section-contact">
+                        <div id="section-contact" class="unable">
                             <h3 id="title-contact" class="gold-underline">Une <span class="text-title-gold">question</span> ? Contactez-nous !</h3>
                             
                             <div id="contact-contain">
@@ -258,6 +301,7 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/active.js"></script>
     <script type="text/javascript" src="js/scroll.js"></script>
+    <script type="text/javascript" src="js/changepage.js"></script>
     
 
 </html>
