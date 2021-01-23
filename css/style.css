@@ -14,6 +14,140 @@ html{
 
 body{
     font-family: "Arial";
+    background-image: url("../images/background.jpg");
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+#main-menu{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 20vw;
+    height: 100vh;
+    margin-bottom: 20%;
+}
+
+#logo-site{
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+
+#menu-navigation>nav>li{
+    font-size: 2.5rem;
+    margin: 15% 0 15% 10%;
+}
+
+#menu-navigation>nav>li>a{
+    text-decoration: none;
+    color: rgb(187, 185, 185);
+}
+
+#menu-navigation>nav>li.active>a{
+    color: #c6a53e;
+}
+
+#menu-navigation>nav>li:nth-child(2).active::marker{
+    content: url(../images/flecheactive.png);
+}
+
+#menu-navigation>nav>li:nth-child(2)::marker{
+    content: url(../images/fleche.png);
+}
+
+#menu-navigation>nav>li:nth-child(3).active::marker{
+    content: url(../images/filmsactive.png);
+}
+
+#menu-navigation>nav>li:nth-child(3)::marker{
+    content: url(../images/films.png);
+}
+
+#menu-navigation>nav>li:nth-child(4).active::marker{
+    content: url(../images/Planningactive.png);
+}
+
+#menu-navigation>nav>li:nth-child(4)::marker{
+    content: url(../images/Planning.png);
+}
+
+#menu-navigation>nav>li:nth-child(5).active::marker{
+    content: url(../images/concoursactive.png);
+}
+
+#menu-navigation>nav>li:nth-child(5)::marker{
+    content: url(../images/concours.png);
+}
+
+#menu-navigation>nav>li:nth-child(6).active::marker{
+    content: url(../images/contactactive.png);
+}
+
+#menu-navigation>nav>li:nth-child(6)::marker{
+    content: url(../images/contact.png);
+}
+
+#links-social-networks{
+    margin-top: 25%;
+    margin-left: 10%;
+    display: flex;
+    width: 25%;
+}
+
+#link-discord{
+    width: 50%;
+}
+
+#img-link-discord{
+    width: 100%;
+}
+
+#link-facebook{
+    width: 50%;
+}
+
+#img-link-facebook{
+    width: 100%;
+}
+
+#menu-copyright{
+    position: absolute;
+    bottom: 3rem;
+    left: 10rem;
+}
+
+#main-contenu{
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    left: 21%;
+    top: 0;
+}
+
+#home-live-twitch{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 120rem;
+}
+
+#home-presentation-contain{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100vw;
+    width: 100vw;
+}
+
+#title-home{
+    text-transform: uppercase ;
+    color: white;
+    font-size: 8rem;
+}
+
+.gold-underline{
+    text-decoration: #c6a53e underline;
 }
 
 /**********/

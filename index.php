@@ -33,7 +33,7 @@
             <div id="main-menu">
                 <!-- Logo -->
                 <div id="menu-logo">
-                    <img id="logo-site" src="images/favicon.png" alt="Logo_MMI_OR_2021" />
+                    <a href="#"><img id="logo-site" src="images/favicon.png" alt="Logo_MMI_OR_2021" /><a>
                 </div>
                 
                 <!-- Séparateur -->
@@ -43,11 +43,11 @@
                 <!-- Menu navigation -->
                 <div id="menu-navigation">
                     <nav>
-                        <li>MMI D'OR</li>
-                        <li>FILMS</li>
-                        <li>PLANNING</li>
-                        <li>CONCOURS</li>
-                        <li>CONTACT</li>
+                        <li><a href="#">MMI D'OR</a></li>
+                        <li><a href="#film">FILMS</a></li>
+                        <li><a href="#planning">PLANNING</a></li>
+                        <li><a href="#concours">CONCOURS</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
                     </nav>
                 </div>
                 
@@ -253,4 +253,6 @@
           });
         </script>
     </body>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/active.js"></script>
 </html>
