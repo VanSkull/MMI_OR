@@ -200,22 +200,16 @@ body{
       left: 200vw;
   }
 
-.unable{
-    display: none;
-}
-
-.current{
-    display: block;
-}
-
-#section-films{
+/*#section-films{
+    display: flex;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: -1vw;
+    width: 200vw;
     padding-left: 10vw;
     background-color: rgba(0, 0, 0, 0.5);
-}
+}*/
 
 #title-films{
     text-transform: uppercase ;
@@ -234,7 +228,7 @@ body{
 .card-film{
     display: flex;
     margin: 1rem;
-    width: 35vw;
+    width: 40vw;
 }
 
 .film-poster{
@@ -242,10 +236,18 @@ body{
 }
 
 #poster-2nuts{
+    position: relative;
     width: 15rem;
-    height: 20rem;
-    background-image: url(../images/affiches/ok.jpg);
+    height: 22.5rem;
     background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#film-link{
+    position: absolute;
+    top :-0.25vw;
+    width: 100%;
+    height: 100%;
 }
 
 .film-synopsis{
@@ -263,13 +265,75 @@ body{
     text-align: justify;
 }
 
-.film-poster-vote>p{
+.film-poster-vote>a{
+    text-decoration: none;
+    color: white;
+    display: block;
     position: relative;
     top: 0;
     left: -4rem;
     font-size: 3rem;
     transform: rotate(-90deg);
 	transform-origin: right top;
+}
+
+#end{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 140vw;
+    align-items: center;
+}
+
+#end-img{
+    width: 20vw;
+    height: 20vh;
+}
+
+#end-img>img{
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+
+#end-text{
+    font-size: 10rem;
+    font-family: 'Shadows Into Light', cursive;
+    color: white;
+}
+
+#section-planning>div{
+    width: 80vw;
+    position: absolute;
+    color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    left: -1vw;
+    padding-left: 10vw;
+}
+
+#title-planning{
+    text-transform: uppercase ;
+    font-size: 8rem;
+    margin-bottom: 1.5rem;
+}
+
+#planning-array{
+    font-size: 3rem;
+}
+
+#planning-array tr td:first-child{
+    text-align: center;
+}
+
+.unable{
+    display: none;
+}
+
+.current{
+    display: block;
 }
 /**********/
 /* Règles */

@@ -1,5 +1,5 @@
 <?php
-    //include('bdd.php');
+    include('exe/bdd.php');
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,9 @@
         <link rel="icon" href="images/favicon.png" type="image/png" />        
         
         <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
         
         <!-- Fonts Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -47,11 +49,11 @@
                 <!-- Menu navigation -->
                 <div id="menu-navigation">
                     <nav>
-                        <li><a href="" id="accueil" onclick="changepage('mmidor')">MMI D'OR</a></li>
-                        <li><a href="#film" id="films" onclick="changepage('films')">FILMS</a></li>
-                        <li><a href="#planning" id="planning" onclick="changepage('planning')">PLANNING</a></li>
-                        <li><a href="#concours" id="concours" onclick="changepage('concours')">CONCOURS</a></li>
-                        <li><a href="#contact" id="contact" onclick="changepage('contact')">CONTACT</a></li>
+                        <li><a href="" id="accueil">MMI D'OR</a></li>
+                        <li><a href="#film" id="films">FILMS</a></li>
+                        <li><a href="#planning" id="planning">PLANNING</a></li>
+                        <li><a href="#concours" id="concours">CONCOURS</a></li>
+                        <li><a href="#contact" id="contact">CONTACT</a></li>
                     </nav>
                 </div>
                 
@@ -91,25 +93,26 @@
                             </div>
                             <div id="arrive-scroll"></div>
                         </div>
-                        <div id="section-films" class="current">
+                        <div id="section-films" class="unable">
                             <div class="body-section">
                                 <h3 id="title-films" class="gold-underline">Tous les <span class="text-title-gold">films</span></h3>
                                 
                                 <div id="all-films">
                                     <?php
-                                        /*$sql = "SELECT * FROM films";
+                                        $sql = "SELECT * FROM films";
                                         $q = $pdo->prepare($sql);
-                                        $q->execute(array($id,$id));
+                                        $q->execute();
                                         while($line=$q->fetch()) {
                                             echo "<div id=" . $line['title'] . " class='card-film'>
                                                         <div class='film-poster'>
                                                             <div class='film-poster-vote'>
                                                                 <a href='vote.php?id=". $line['id'] ."'>VOTER</a>
                                                             </div>
-                                                            <div id='poster-" . $line['title'] . "' class='film-poster-image' style='background-image=url(/images/affiches/" . $line['image'] . ")'>
+                                                            <div id='poster-2nuts' class='film-poster-image' style='background-image: url(images/affiches/" . $line['image'] . ");)'>
                                                                 <div class='film-overlay-play'>
                                                                     <i class='fa fa-play'></i>
                                                                 </div>
+                                                                <a href='films.php?id=" . $line['id'] . "' id='film-link'></a>
                                                             </div>
                                                         </div>
                                                         <div class='film-synopsis'>
@@ -117,92 +120,20 @@
                                                             <p class='film-synopsis-text'>" . $line['synopsis'] . "</p>
                                                         </div>
                                                     </div>";
-                                        }*/
+                                        }
                                     ?>
-                                    <div id="film-2nuts" class="card-film">
-                                        <div class="film-poster">
-                                            <div class="film-poster-vote">
-                                                <p>VOTER</p>
-                                            </div>
-                                            <div id="poster-2nuts" class="film-poster-image">
-                                                <div class="film-overlay-play">
-                                                    <i class="fa fa-play"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="film-synopsis">
-                                            <h4 class="film-title">2Nuts</h4>
-                                            <p class="film-synopsis-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        </div>
-                                    </div>
-                                    <div id="film-2nuts" class="card-film">
-                                        <div class="film-poster">
-                                            <div class="film-poster-vote">
-                                                <p>VOTER</p>
-                                            </div>
-                                            <div id="poster-2nuts" class="film-poster-image">
-                                                <div class="film-overlay-play">
-                                                    <i class="fa fa-play"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="film-synopsis">
-                                            <h4 class="film-title">2Nuts</h4>
-                                            <p class="film-synopsis-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        </div>
-                                    </div>
-                                    <div id="film-2nuts" class="card-film">
-                                        <div class="film-poster">
-                                            <div class="film-poster-vote">
-                                                <p>VOTER</p>
-                                            </div>
-                                            <div id="poster-2nuts" class="film-poster-image">
-                                                <div class="film-overlay-play">
-                                                    <i class="fa fa-play"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="film-synopsis">
-                                            <h4 class="film-title">2Nuts</h4>
-                                            <p class="film-synopsis-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        </div>
-                                    </div>
-                                    <div id="film-2nuts" class="card-film">
-                                        <div class="film-poster">
-                                            <div class="film-poster-vote">
-                                                <p>VOTER</p>
-                                            </div>
-                                            <div id="poster-2nuts" class="film-poster-image">
-                                                <div class="film-overlay-play">
-                                                    <i class="fa fa-play"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="film-synopsis">
-                                            <h4 class="film-title">2Nuts</h4>
-                                            <p class="film-synopsis-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        </div>
-                                    </div>
-                                    <div id="film-2nuts" class="card-film">
-                                        <div class="film-poster">
-                                            <div class="film-poster-vote">
-                                                <p>VOTER</p>
-                                            </div>
-                                            <div id="poster-2nuts" class="film-poster-image">
-                                                <div class="film-overlay-play">
-                                                    <i class="fa fa-play"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="film-synopsis">
-                                            <h4 class="film-title">2Nuts</h4>
-                                            <p class="film-synopsis-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        </div>
-                                    </div>
                                 </div>
-                            </div>                            
+                            </div>   
+                            <div id="end">
+                                    <div id="end-img">
+                                        <img src="images/popcorn.png" alt="Sceau de popcorn">
+                                    </div>
+                                    <div id="end-text">
+                                        <p>Bon<br/>Visionnage !</p>
+                                    </div>
+                            </div>                        
                         </div>
-                        <div id="section-planning" class="unable">
+                        <div id="section-planning" class="current">
                             <div class="body-section">
                                 <h3 id="title-planning" class="gold-underline">Plan<span class="text-title-gold">ning</span></h3>
                                 
@@ -301,7 +232,6 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/active.js"></script>
     <script type="text/javascript" src="js/scroll.js"></script>
-    <script type="text/javascript" src="js/changepage.js"></script>
     
 
 </html>
