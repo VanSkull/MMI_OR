@@ -433,23 +433,25 @@ body{
 }
 
 video{
-    width: 60vw;
+    width: 70vw;
 }
 
 #films-infos{
     color: white;
     position: absolute;
     background-color: black;
-    width: 80vw;
+    width: 100vw;
+    height: 100vh;
     top: 50%;
-    left: -1vw;
+    left: 0;
     transform: translateY(-50%);
     display: flex;
-    padding: 2rem 0;
+    align-items: center;
+    padding: 2rem 2rem;
 }
 
 #film-presentation{
-    margin-left: 2vw;
+    margin-left: 1rem;
 }
 
 #film-presentation>ul{
@@ -469,6 +471,7 @@ video{
 #titre-film{
     text-transform: uppercase;
     font-size: 5rem;
+    margin: 0 0 1rem;
 }
 
 #film-presentation>h2:nth-child(2){
@@ -490,12 +493,36 @@ video{
     width: 100%;
 }
 
+#films-contenu{
+    padding: 2rem 2rem;
+    display: block;
+    margin: auto;
+}
+
 .lighter-name{
     color: rgb(134, 133, 133);
 }
 
 .darker-name{
     color: rgb(236, 236, 236);
+}
+
+.popup{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50%;  
+    margin-left: -110vw;  
+}
+
+.close{
+    display: block;
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    font-size: 5rem;
+    top: 0;
+    right: -58vw;
 }
 
 .unable{

@@ -32,45 +32,7 @@
         <!--<script src="js/jquery-3.5.1.min.js"></script>-->
     </head>
     <body>
-        <!-- Page principal -->
-        <div id="main-contain">
-            
-            <!-- Menu principal -->
-            <div id="main-menu">
-                <!-- Logo -->
-                <div id="menu-logo">
-                    <a href="index.php"><img id="logo-site" src="images/favicon.png" alt="Logo_MMI_OR_2021" /><a>
-                </div>
-                
-                <!-- Séparateur -->
-                <div id="menu-marker">
-                </div>
-                
-                <!-- Menu navigation -->
-                <div id="menu-navigation">
-                    <nav>
-                        <li class="active" id="li-home"><a href="#" id="accueil">MMI D'OR</a></li>
-                        <li id="li-films"><a href="#" id="films">FILMS</a></li>
-                        <li id="li-planning"><a href="#" id="planning">PLANNING</a></li>
-                        <li id="li-concours"><a href="#" id="concours">CONCOURS</a></li>
-                        <li id="li-contact"><a href="#" id="contact">CONTACT</a></li>
-                    </nav>
-                </div>
-                
-                <!-- Réseaux sociaux -->
-                <div id="menu-social-networks">
-                    <p id="links-social-networks">
-                        <a id="link-discord" href="https://discord.gg/JrAPBWcN3J"><img id="img-link-discord" src="images/discord.png" alt="Lien_Discord_MMI_OR_2021" /></a>
-                        <a id="link-facebook" href="https://www.facebook.com/mmi.dor.2021.iut.lens"><img id="img-link-facebook" src="images/facebook.png" alt="Lien_Facebook_MMI_OR_2021" /></a>
-                    </p>
-                </div>
-                
-                <!-- Copyright -->
-                <div id="menu-copyright">
-                    <p id="copyright-text">©2021 MMI D'OR</p>
-                </div>                
-            </div>
-            <div id="main-contenu">
+            <div id="films-contenu">
                 <?php
                     $sql = "SELECT * FROM films WHERE id=?";
                     $q = $pdo->prepare($sql);
@@ -88,7 +50,16 @@
                                     </video>
                                 </div>
                                 <div id="film-presentation">
-                                    <h1 id="titre-film" class="text-title-gold"><?php echo $line['title'];?></h1>
+                                    <?php
+                                        if($_GET['id'] == 4){
+                                            echo "<h1 id='titre-film' class='text-title-gold' style='font-size:2.5rem'>" . $line['title'] . "</h1>";
+                                        }
+                                        if($_GET['id'] == 5){
+                                            echo "<h1 id='titre-film' class='text-title-gold' style='font-size:1.5rem'>" . $line['title'] . "</h1>";
+                                        }
+                                        if($_GET['id'] != 4 && $_GET['id'] != 5){
+                                            echo "<h1 id='titre-film' class='text-title-gold'>" . $line['title'] . "</h1>";
+                                        } ?>
                                     <h2><span class='darker-name'>Durée : </span><span class='lighter-name'><?php echo str_replace(".",":",$line['duree']);?> min</span></h2>
                                     <?php 
                                 }?>
@@ -130,21 +101,5 @@
                 </div>
             </div>
         </div>
-        <!-- JavaScript & JQuery -->
-        <!--<script src="js/main.js"></script>-->
-        <script src="https://embed.twitch.tv/embed/v1.js"></script>
-        <script type="text/javascript">
-          new Twitch.Embed("twitch-embed", {
-            width: "100%",
-            height: 600,
-            channel: "VanSkull",
-            theme: "light",
-          });
-        </script>
     </body>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/scroll.js"></script>
-    <script type="text/javascript" src="js/changepage.js"></script>
-    
-
 </html>

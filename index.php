@@ -94,7 +94,7 @@
                             <div id="arrive-scroll"></div>
                         </div>
                         <div id="section-films" class="unable">
-                            <div class="body-section">
+                            <div class="body-section links">
                                 <h3 id="title-films" class="gold-underline">Tous les <span class="text-title-gold">films</span></h3>
                                 <div id="films-affichage">
                                     <div id="all-films">
@@ -112,7 +112,7 @@
                                                                     <div class='film-overlay-play'>
                                                                         <i class='fa fa-play'></i>
                                                                     </div>
-                                                                    <a href='films.php?id=" . $line['id'] . "' id='film-link'></a>
+                                                                    <a class='openpop' href='films.php?id=" . $line['id'] . "' id='film-link'></a>
                                                                 </div>
                                                             </div>
                                                             <div class='film-synopsis'>
@@ -132,7 +132,16 @@
                                         </div>
                                     </div> 
                                 </div>
-                            </div>             
+                            </div> 
+                            <div class="wrapper">
+                                        <div class="popup">
+                                            <iframe id="popup" src="" width="400%" height="600rem">
+                                                <p>Your browser does not support iframes.</p>
+                                            </iframe>
+                                            <a href="#" class="close">X</a>
+
+                                        </div>
+                                    </div>            
                         </div>
                         <div id="section-planning" class="unable">
                             <div class="body-section">
@@ -205,10 +214,10 @@
                                     </div>
                                     <div id="contact-form">
                                         <h2>Une question ?</h2>
-                                        <form action="#" method="post">
+                                        <form action="contact.php" method="post">
                                             <input type="text" id="form-contact-name" name="name" placeholder="Nom Prénom*" required /><br/>
                                             <input type="email" id="form-contact-mail" name="mail" placeholder="Email*" required /><br/>
-                                            <input type="tel" id="form-contact-tel" name="tel" placeholder="Téléphone*" required /><br/>
+                                            <input type="tel" id="form-contact-tel" name="tel" placeholder="Téléphone*" required pattern="[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}"/><br/>
                                             <textarea id="form-message" name="message" placeholder="Écrivez votre message ici..." required></textarea><br/>
                                             <input type="submit" id="form-contact-button" value="Envoyer" />
                                         </form>
@@ -236,6 +245,7 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/scroll.js"></script>
     <script type="text/javascript" src="js/changepage.js"></script>
+    <script type="text/javascript" src="js/popup.js"></script>
     
 
 </html>
