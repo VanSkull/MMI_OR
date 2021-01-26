@@ -165,6 +165,8 @@ body{
 
 #title-home{
     text-transform: uppercase ;
+    padding-left: 2vw;
+    padding-top: 1rem;
     color: white;
     font-size: 8rem;
 }
@@ -172,6 +174,7 @@ body{
 #home-text{
     display: flex;
     color: white;
+    padding: 0 5vw;
     font-size: 2.7rem;
 }
 
@@ -200,8 +203,7 @@ body{
       left: 200vw;
   }
 
-/*#section-films{
-    display: flex;
+#section-films>div{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -209,7 +211,11 @@ body{
     width: 200vw;
     padding-left: 10vw;
     background-color: rgba(0, 0, 0, 0.5);
-}*/
+}
+
+#films-affichage{
+    display: flex;
+}
 
 #title-films{
     text-transform: uppercase ;
@@ -312,6 +318,8 @@ body{
     background-color: rgba(0, 0, 0, 0.5);
     left: -1vw;
     padding-left: 10vw;
+    padding-bottom: 2.5rem;
+    padding-top: 2.5rem;
 }
 
 #title-planning{
@@ -322,10 +330,172 @@ body{
 
 #planning-array{
     font-size: 3rem;
+    border-collapse: collapse;
 }
 
 #planning-array tr td:first-child{
+    font-weight: bold;
     text-align: center;
+    padding: 1.5rem 10rem;
+}
+
+#planning-array tr td:nth-child(2){
+    padding: 1.5rem 8rem 1.5rem 3rem;
+}
+
+#planning-array td, #planning-array th{
+    border: 3px white solid;
+}
+
+#section-contact{
+    width: 80vw;
+    position: absolute;
+    color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    left: -1vw;
+    padding : 2.5rem 0 2.5rem 7vw;
+}
+
+#title-contact{
+    text-transform: uppercase ;
+    font-size: 8rem;
+    margin-bottom: 1.5rem;
+}
+
+#contact-contain{
+    display: flex;
+}
+
+#contact-contain>div{
+    margin: auto;
+}
+
+#contact-infos{
+    width: 20vw;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#contact-infos>p{
+    margin: .5rem 0;
+}
+
+#contact-img{
+    width: 100%;
+}
+
+#contact-contain>#contact-form{
+    margin-top: -5vh;
+    width: 50%;
+}
+
+#contact-form>h2{
+    font-size: 6rem;
+    margin-bottom: 1rem;
+}
+
+#contact-form>form{
+    height: 85%;
+    width: 100%;
+}
+
+#contact-form>form>input, #contact-form>form>textarea{
+    background-color: rgb(36, 36, 36);
+    border: none;
+    border-radius: 1rem;
+    padding-left: 0.5rem;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 4rem;
+    margin: 0.5rem 0;
+}
+
+#contact-form>form>input::placeholder, #contact-form>form>textarea::placeholder{
+    color: rgb(189, 189, 189);
+}
+
+#contact-form>form>textarea{
+    padding-top: 0.5rem;
+    height: 12rem;
+}
+
+#contact-form>form>#form-contact-button{
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 3rem;
+    width: 30%;
+    float: right;
+    background: none;
+    color:  #c6a53e;
+    text-decoration: underline white 2px;
+}
+
+video{
+    width: 60vw;
+}
+
+#films-infos{
+    color: white;
+    position: absolute;
+    background-color: black;
+    width: 80vw;
+    top: 50%;
+    left: -1vw;
+    transform: translateY(-50%);
+    display: flex;
+    padding: 2rem 0;
+}
+
+#film-presentation{
+    margin-left: 2vw;
+}
+
+#film-presentation>ul{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#film-presentation>ul>li::marker{
+    content: none;
+}
+
+#film-presentation>ul>li{
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+
+#titre-film{
+    text-transform: uppercase;
+    font-size: 5rem;
+}
+
+#film-presentation>h2:nth-child(2){
+    font-weight: normal;
+    margin-bottom: 2rem;
+}
+
+#film-reseaux{
+    display: flex;
+    align-items: center;
+}
+
+#film-reseaux>a{
+    width: 15%;
+    margin: 1rem 1rem;
+}
+
+#film-reseaux>a>img{
+    width: 100%;
+}
+
+.lighter-name{
+    color: rgb(134, 133, 133);
+}
+
+.darker-name{
+    color: rgb(236, 236, 236);
 }
 
 .unable{

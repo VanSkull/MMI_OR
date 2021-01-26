@@ -10,7 +10,7 @@ $db="mmidor"; // le nom de votre base de données.
 $user="root"; // nom d utilisateur pour se connecter
               // A l iut prenom.nom
 
-$passwd=""; // mot de passe de l utilisateur pour se connecter
+$passwd="GalaxY_108-170"; // mot de passe de l utilisateur pour se connecter
             // A l iut, généré automatiquement
 
 try {

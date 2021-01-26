@@ -39,7 +39,7 @@
             <div id="main-menu">
                 <!-- Logo -->
                 <div id="menu-logo">
-                    <a href="#"><img id="logo-site" src="images/favicon.png" alt="Logo_MMI_OR_2021" /><a>
+                    <a href=""><img id="logo-site" src="images/favicon.png" alt="Logo_MMI_OR_2021" /><a>
                 </div>
                 
                 <!-- Séparateur -->
@@ -49,11 +49,11 @@
                 <!-- Menu navigation -->
                 <div id="menu-navigation">
                     <nav>
-                        <li><a href="" id="accueil">MMI D'OR</a></li>
-                        <li><a href="#film" id="films">FILMS</a></li>
-                        <li><a href="#planning" id="planning">PLANNING</a></li>
-                        <li><a href="#concours" id="concours">CONCOURS</a></li>
-                        <li><a href="#contact" id="contact">CONTACT</a></li>
+                        <li class="active" id="li-home"><a href="#" id="accueil">MMI D'OR</a></li>
+                        <li id="li-films"><a href="#" id="films">FILMS</a></li>
+                        <li id="li-planning"><a href="#" id="planning">PLANNING</a></li>
+                        <li id="li-concours"><a href="#" id="concours">CONCOURS</a></li>
+                        <li id="li-contact"><a href="#" id="contact">CONTACT</a></li>
                     </nav>
                 </div>
                 
@@ -75,7 +75,7 @@
             <div id="main-contenu">
                 <div id="contenu-body">
                     <div id="all-sections">
-                        <div id="section-home" class="unable">
+                        <div id="section-home" class="current">
                             <div id="home-live-twitch">
                                 <div id="twitch-embed"></div>
                             </div>
@@ -96,51 +96,52 @@
                         <div id="section-films" class="unable">
                             <div class="body-section">
                                 <h3 id="title-films" class="gold-underline">Tous les <span class="text-title-gold">films</span></h3>
-                                
-                                <div id="all-films">
-                                    <?php
-                                        $sql = "SELECT * FROM films";
-                                        $q = $pdo->prepare($sql);
-                                        $q->execute();
-                                        while($line=$q->fetch()) {
-                                            echo "<div id=" . $line['title'] . " class='card-film'>
-                                                        <div class='film-poster'>
-                                                            <div class='film-poster-vote'>
-                                                                <a href='vote.php?id=". $line['id'] ."'>VOTER</a>
-                                                            </div>
-                                                            <div id='poster-2nuts' class='film-poster-image' style='background-image: url(images/affiches/" . $line['image'] . ");)'>
-                                                                <div class='film-overlay-play'>
-                                                                    <i class='fa fa-play'></i>
+                                <div id="films-affichage">
+                                    <div id="all-films">
+                                        <?php
+                                            $sql = "SELECT * FROM films";
+                                            $q = $pdo->prepare($sql);
+                                            $q->execute();
+                                            while($line=$q->fetch()) {
+                                                echo "<div id=" . $line['title'] . " class='card-film'>
+                                                            <div class='film-poster'>
+                                                                <div class='film-poster-vote'>
+                                                                    <a href='vote.php?id=". $line['id'] ."'>VOTER</a>
                                                                 </div>
-                                                                <a href='films.php?id=" . $line['id'] . "' id='film-link'></a>
+                                                                <div id='poster-2nuts' class='film-poster-image' style='background-image: url(images/affiches/" . $line['image'] . ");)'>
+                                                                    <div class='film-overlay-play'>
+                                                                        <i class='fa fa-play'></i>
+                                                                    </div>
+                                                                    <a href='films.php?id=" . $line['id'] . "' id='film-link'></a>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class='film-synopsis'>
-                                                            <h4 class='film-title'>" . $line['title'] . "</h4>
-                                                            <p class='film-synopsis-text'>" . $line['synopsis'] . "</p>
-                                                        </div>
-                                                    </div>";
-                                        }
-                                    ?>
+                                                            <div class='film-synopsis'>
+                                                                <h4 class='film-title'>" . $line['title'] . "</h4>
+                                                                <p class='film-synopsis-text'>" . $line['synopsis'] . "</p>
+                                                            </div>
+                                                        </div>";
+                                            }
+                                        ?>
+                                    </div>
+                                    <div id="end">
+                                        <div id="end-img">
+                                            <img src="images/popcorn.png" alt="Sceau de popcorn">
+                                        </div>
+                                        <div id="end-text">
+                                            <p>Bon<br/>Visionnage !</p>
+                                        </div>
+                                    </div> 
                                 </div>
-                            </div>   
-                            <div id="end">
-                                    <div id="end-img">
-                                        <img src="images/popcorn.png" alt="Sceau de popcorn">
-                                    </div>
-                                    <div id="end-text">
-                                        <p>Bon<br/>Visionnage !</p>
-                                    </div>
-                            </div>                        
+                            </div>             
                         </div>
-                        <div id="section-planning" class="current">
+                        <div id="section-planning" class="unable">
                             <div class="body-section">
                                 <h3 id="title-planning" class="gold-underline">Plan<span class="text-title-gold">ning</span></h3>
                                 
                                 <table id="planning-array">
                                     <tr>
-                                        <th>Horaires</th>
-                                        <th>Déroulement</th>
+                                        <th class="gold-underline">Horaires</th>
+                                        <th class="gold-underline">Déroulement</th>
                                     </tr>
                                     <tr>
                                         <td>17h50</td>
@@ -193,22 +194,25 @@
                             </div>
                         </div>
                         <div id="section-contact" class="unable">
-                            <h3 id="title-contact" class="gold-underline">Une <span class="text-title-gold">question</span> ? Contactez-nous !</h3>
-                            
-                            <div id="contact-contain">
-                                <div id="contact-form">
-                                    <form action="#" method="post">
-                                        <label for="form-contact-name" id="label-contact-name">Nom<sup class="sign-obligation">*</sup></label>
-                                        <input type="text" id="form-contact-name" name="name" required />
-                                        <label for="form-contact-mail" id="label-contact-mail">E-mail<sup class="sign-obligation">*</sup></label>
-                                        <input type="email" id="form-contact-mail" name="mail" required />
-                                        <textarea id="form-message" name="message" placeholder="Votre message..." required></textarea>
-                                        <input type="submit" id="form-contact-button" value="Envoyer" />
-                                    </form>
-                                </div>
-                                <div id="contact-infos">
-                                    <p id="contact-infos-phone"><i class="fa fa-phone"></i> +33 1 23 45 67 89</p>
-                                    <p id="contact-infos-email"><i class="fa fa-envelope"></i> contact.mmidor2021@gmail.com</p>
+                            <div class="body-section">
+                                <h3 id="title-contact" class="gold-underline">Contact</h3>
+                                
+                                <div id="contact-contain">
+                                    <div id="contact-infos">
+                                        <img src="images/contacticon.png" alt="Logo contact" id="contact-img">
+                                        <p id="contact-infos-phone"><i class="fa fa-phone"></i> +33 1 23 45 67 89</p>
+                                        <p id="contact-infos-email"><i class="fa fa-envelope"></i> contact.mmidor2021@gmail.com</p>
+                                    </div>
+                                    <div id="contact-form">
+                                        <h2>Une question ?</h2>
+                                        <form action="#" method="post">
+                                            <input type="text" id="form-contact-name" name="name" placeholder="Nom Prénom*" required /><br/>
+                                            <input type="email" id="form-contact-mail" name="mail" placeholder="Email*" required /><br/>
+                                            <input type="tel" id="form-contact-tel" name="tel" placeholder="Téléphone*" required /><br/>
+                                            <textarea id="form-message" name="message" placeholder="Écrivez votre message ici..." required></textarea><br/>
+                                            <input type="submit" id="form-contact-button" value="Envoyer" />
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -230,8 +234,8 @@
         </script>
     </body>
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/active.js"></script>
     <script type="text/javascript" src="js/scroll.js"></script>
+    <script type="text/javascript" src="js/changepage.js"></script>
     
 
 </html>
