@@ -51,13 +51,13 @@
                                 </div>
                                 <div id="film-presentation">
                                     <?php
-                                        if($_GET['id'] == 4){
+                                        if($_GET['id'] == 5){
                                             echo "<h1 id='titre-film' class='text-title-gold' style='font-size:2.5rem'>" . $line['title'] . "</h1>";
                                         }
-                                        if($_GET['id'] == 5){
+                                        if($_GET['id'] == 6){
                                             echo "<h1 id='titre-film' class='text-title-gold' style='font-size:1.5rem'>" . $line['title'] . "</h1>";
                                         }
-                                        if($_GET['id'] != 4 && $_GET['id'] != 5){
+                                        if($_GET['id'] != 5 && $_GET['id'] != 6){
                                             echo "<h1 id='titre-film' class='text-title-gold'>" . $line['title'] . "</h1>";
                                         } ?>
                                     <h2><span class='darker-name'>Durée : </span><span class='lighter-name'><?php echo str_replace(".",":",$line['duree']);?> min</span></h2>
@@ -66,7 +66,7 @@
                                     <h2>Équipe technique :</h2>
                                     <ul>
                                         <?php
-                                            $sql = "SELECT * FROM roles INNER JOIN personne on idPersonne=personne.id WHERE idFilm=?";
+                                            $sql = "SELECT * FROM roles INNER JOIN etudiant on idPersonne=etudiant.id WHERE idFilm=?";
                                             $q = $pdo->prepare($sql);
                                             $q->execute(array($_GET['id']));
                                             while($line=$q->fetch()) {

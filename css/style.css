@@ -93,8 +93,6 @@ body{
 }
 
 #links-social-networks{
-    margin-top: 25%;
-    margin-left: 10%;
     display: flex;
     width: 25%;
 }
@@ -208,7 +206,7 @@ body{
     top: 50%;
     transform: translateY(-50%);
     left: -1vw;
-    width: 200vw;
+    width: 225vw;
     padding-left: 10vw;
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -228,7 +226,7 @@ body{
     color: white;
     display: flex;
     flex-wrap: wrap;
-    width: 125vw;
+    width: 175vw;
 }
 
 .card-film{
@@ -288,7 +286,7 @@ body{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 140vw;
+    left: 180vw;
     align-items: center;
 }
 
@@ -531,6 +529,19 @@ video{
 
 .current{
     display: block;
+}
+
+#menu-social-networks{
+    display: flex;
+    align-items: center;
+    margin-left: 2vw;
+}
+
+.session{
+    padding: 0;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
 }
 /**********/
 /* Règles */

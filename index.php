@@ -1,5 +1,6 @@
 <?php
     include('exe/bdd.php');
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -63,6 +64,14 @@
                         <a id="link-discord" href="https://discord.gg/JrAPBWcN3J"><img id="img-link-discord" src="images/discord.png" alt="Lien_Discord_MMI_OR_2021" /></a>
                         <a id="link-facebook" href="https://www.facebook.com/mmi.dor.2021.iut.lens"><img id="img-link-facebook" src="images/facebook.png" alt="Lien_Facebook_MMI_OR_2021" /></a>
                     </p>
+                    <?php
+                            if(!isset($_SESSION['id'])){
+                                echo "<a class='session' href='connexion.php'>Connexion</a>";
+                            }
+                            else{
+                                echo "<a class='session' href='exe/deconnexion.php'>" . $_SESSION['nom'] . "</a>";
+                            }
+                        ?>
                 </div>
                 
                 <!-- Copyright -->
