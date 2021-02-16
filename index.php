@@ -219,11 +219,11 @@
                                     <div id="contact-infos">
                                         <img src="images/contacticon.png" alt="Logo contact" id="contact-img">
                                         <p id="contact-infos-phone"><i class="fa fa-phone"></i> +33 1 23 45 67 89</p>
-                                        <p id="contact-infos-email"><i class="fa fa-envelope"></i> contact.mmidor2021@gmail.com</p>
+                                        <a href="mailto:mmidor2021@gmail.com" class="mail"><p id="contact-infos-email"><i class="fa fa-envelope"></i> mmidor2021@gmail.com</p></a>
                                     </div>
                                     <div id="contact-form">
                                         <h2>Une question ?</h2>
-                                        <form action="contact.php" method="post">
+                                        <form action="exe/contact.php" method="post">
                                             <input type="text" id="form-contact-name" name="name" placeholder="Nom Prénom*" required /><br/>
                                             <input type="email" id="form-contact-mail" name="mail" placeholder="Email*" required /><br/>
                                             <input type="tel" id="form-contact-tel" name="tel" placeholder="Téléphone*" required pattern="[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}"/><br/>
@@ -248,6 +248,7 @@
             height: 600,
             channel: "VanSkull",
             theme: "light",
+            parent: ["mmidor.fr", "www.mmidor.fr"]
           });
         </script>
     </body>

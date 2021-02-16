@@ -44,6 +44,7 @@
                                 <input type="text" name="pseudo" placeholder="Pseudo"><br/>
                                 <input type="text" name="nom" placeholder="Nom"><br/>
                                 <input type="text" name="prenom" placeholder="Prénom"><br/>
+                                <input type="email" name="mail" placeholder="Adresse mail"><br/>
                                 <select name="class">
                                     <option value="">Selectionner une classe</option>
                                     <option value="MMI1">MMI1</option>

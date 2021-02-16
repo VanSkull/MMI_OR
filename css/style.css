@@ -69,11 +69,11 @@ body{
 }
 
 #menu-navigation>nav>li:nth-child(4).active::marker{
-    content: url(../images/Planningactive.png);
+    content: url(../images/planningactive.png);
 }
 
 #menu-navigation>nav>li:nth-child(4)::marker{
-    content: url(../images/Planning.png);
+    content: url(../images/planning.png);
 }
 
 #menu-navigation>nav>li:nth-child(5).active::marker{
@@ -286,7 +286,7 @@ body{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 180vw;
+    left: 175vw;
     align-items: center;
 }
 
@@ -542,6 +542,11 @@ video{
     color: white;
     text-decoration: none;
     font-size: 1.5rem;
+}
+
+.mail{
+    color: white;
+    text-decoration: none;
 }
 /**********/
 /* Règles */
