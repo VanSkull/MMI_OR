@@ -108,3 +108,38 @@ $(function() {
 		event.preventDefault();
 	});
 });
+
+$(window).scroll(function(){
+        console.log($(window).scrollLeft());
+        console.log($('#section-competition').position().left);
+        if($(window).scrollLeft() > $('#main-contenu').scrollLeft()) {
+            $('#main-menu').addClass('small');
+        } else {
+            $('#main-menu').removeClass('small');
+        }
+
+        if($(window).scrollLeft() > $('#section-home').position().left-100 && $(window).scrollLeft() < $('#section-films').position().left-100){
+                $(".active").removeClass('active');
+                $("#accueil").parent().addClass('active');
+        }
+
+        if($(window).scrollLeft() > $('#section-films').position().left-100 && $(window).scrollLeft() < $('#section-planning').position().left-100) {
+                $(".active").removeClass('active');
+                $("#films").parent().addClass('active');
+        }
+
+        if($(window).scrollLeft() > $('#section-planning').position().left-100 && $(window).scrollLeft() < $('#section-competition').position().left-100) {
+                $(".active").removeClass('active');
+                $("#planning").parent().addClass('active');
+        }
+
+        if($(window).scrollLeft() > $('#section-competition').position().left-100 && $(window).scrollLeft() < $('#section-contact').position().left-100) {
+                $(".active").removeClass('active');
+                $("#concours").parent().addClass('active');
+        }
+
+        if($(window).scrollLeft() > $('#section-contact').position().left-100){
+                $(".active").removeClass('active');
+                $("#contact").parent().addClass('active');
+        }
+      });

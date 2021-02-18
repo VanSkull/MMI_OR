@@ -36,6 +36,90 @@
     <div id="main-contain">
             <!-- Contenu principal -->
             <div id="main-contenu">
+            <?php
+                if(isset($_GET['error'])){
+                    if($_GET['error'] == "incorrect"){
+                        echo "<div id='msg'>
+                            <img alt='Logo MMI D\'OR' src='images/favicon.png'>
+                            <p>L'adresse mail fournie et le mot de passe ne correspondent pas.</p>
+                            <a href='connexion.php'>X</a>
+                            </div>";
+                    }
+                    if($_GET['error'] == "already"){
+                        echo "<div id='msg'>
+                            <img alt='Logo MMI D\'OR' src='images/favicon.png'>
+                            <p>Désolé, il semble que tu sois déjà inscrit.<br/>
+                            Si tu pense que quelqu'un s'est inscrit à ta place ou que tu as oublié ton mot de passe n'hésite pas à nous contacter.</p>
+                            <a href='connexion.php'>X</a>
+                            </div>";
+                    }
+                    if($_GET['error'] == "sql"){
+                        echo "<div id='msg'>
+                            <img alt='Logo MMI D\'OR' src='images/favicon.png'>
+                            <p>Désolé, tu n'as pas rentré les bonnes informations!<br/>
+                            Dans le cas contraire envoi nous un mail via l'onglet contact pour qu'on puisse taper sur le développeur !</p>
+                            <a href='connexion.php'>X</a>
+                            </div>";
+                    }
+                    if($_GET['error'] == "testmdp"){
+                        echo "<div id='msg'>
+                            <img alt='Logo MMI D\'OR' src='images/favicon.png'>
+                            <p>Désolé, les mot de passe ne correspondent pas !</p>
+                            <a href='connexion.php'>X</a>
+                            </div>";
+                    }
+                    if($_GET['error'] == "classe"){
+                        echo "<div id='msg'>
+                            <img alt='Logo MMI D\'OR' src='images/favicon.png'>
+                            <p>Désolé, tu as oublié de mettre ta classe !</p>
+                            <a href='connexion.php'>X</a>
+                            </div>";
+                    }
+                    if($_GET['error'] == "repasswd"){
+                        echo "<div id='msg'>
+                            <img alt='Logo MMI D\'OR' src='images/favicon.png'>
+                            <p>Désolé, tu as oublié d'entrer une deuxième fois ton Mot de passe !</p>
+                            <a href='connexion.php'>X</a>
+                            </div>";
+                    }
+                    if($_GET['error'] == "passwd"){
+                        echo "<div id='msg'>
+                            <img alt='Logo MMI D\'OR' src='images/favicon.png'>
+                            <p>Désolé, tu as oublié de mettre un mot de passe !</p>
+                            <a href='connexion.php'>X</a>
+                            </div>";
+                    }
+                    if($_GET['error'] == "mail"){
+                        echo "<div id='msg'>
+                            <img alt='Logo MMI D\'OR' src='images/favicon.png'>
+                            <p>Désolé, tu as oublié de nous donner ton adresse mail !<br/>
+                            Ne t'en fais pas nous ne nous en servirons pas comme le fait Amazon ;)</p>
+                            <a href='connexion.php'>X</a>
+                            </div>";
+                    }
+                    if($_GET['error'] == "prenom"){
+                        echo "<div id='msg'>
+                            <img alt='Logo MMI D\'OR' src='images/favicon.png'>
+                            <p>Désolé, tu as oublié d'indiquer ton prénom !</p>
+                            <a href='connexion.php'>X</a>
+                            </div>";
+                    }
+                    if($_GET['error'] == "nom"){
+                        echo "<div id='msg'>
+                            <img alt='Logo MMI D\'OR' src='images/favicon.png'>
+                            <p>Désolé, tu as oublié d'indiquer ton nom !</p>
+                            <a href='connexion.php'>X</a>
+                            </div>";
+                    }
+                    if($_GET['error'] == "pseudo"){
+                        echo "<div id='msg'>
+                            <img alt='Logo MMI D\'OR' src='images/favicon.png'>
+                            <p>Désolé, tu as oublié d'indiquer un pseudo !</p>
+                            <a href='connexion.php'>X</a>
+                            </div>";
+                    }
+                }
+            ?>
                 <div id="contenu-body">
                     <div id="all-sections">
                         <div id="section-home" class="current">

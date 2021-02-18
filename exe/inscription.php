@@ -24,9 +24,9 @@
 	    mail($to,$subject,$message,$from);
     }
     if(isset($_POST['pseudo']) && !empty($_POST['pseudo'])){
-       if(isset($_POST['nom']) && !empty($_POST['nom'])){
-            if(isset($_POST['prenom']) && !empty($_POST['prenom'])){
-                if(isset($_POST['prenom']) && !empty($_POST['prenom'])){
+       if(isset($_POST['prenom']) && !empty($_POST['prenom'])){
+            if(isset($_POST['nom']) && !empty($_POST['nom'])){
+                if(isset($_POST['mail']) && !empty($_POST['mail'])){
                     if(isset($_POST['pwd']) && !empty($_POST['pwd'])){
                         if(isset($_POST['repwd']) && !empty($_POST['repwd'])){
                             if(isset($_POST['class']) && !empty($_POST['class'])){
@@ -54,7 +54,7 @@
                                             $q = $pdo->prepare($sql);
                                             $q->execute(array($random,$id));
                                             envoimail($nom,$prenom,$_POST['mail'],$random);
-                                            header('Location: ../index.php');
+                                            header('Location: ../connexion.php?insc=ok');
                                         }
                                         else{
                                             header('Location: ../connexion.php?error=already');

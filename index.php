@@ -35,6 +35,49 @@
     <body>
         <!-- Page principal -->
         <div id="main-contain">
+    <?php
+        if(isset($_GET['mail']) && $_GET['mail'] == "ok"){
+            echo "<div id='msg'>
+                <img alt='Logo MMI D\'OR' src='images/favicon.png'>
+                <p>Merci pour ton message!<br/>
+                Nous te répondrons par mail alors n'hésite pas à jeter un œil dans tes mails régulièrement.</p>
+                <a href='index.php'>X</a>
+                </div>";
+        }
+        if(isset($_GET['error'])){
+            if($_GET['error'] == "champ"){
+                echo "<div id='msg'>
+                    <img alt='Logo MMI D\'OR' src='images/favicon.png'>
+                    <p>Désolé, il semble qu'il y ai un soucis avec les informations que tu as fournies.</p>
+                    <a href='index.php'>X</a>
+                    </div>";
+            }
+            if($_GET['error'] == "mail"){
+                echo "<div id='msg'>
+                    <img alt='Logo MMI D\'OR' src='images/favicon.png'>
+                    <p>Désolé, il semble qu'il y ai une erreur dans l'adresse mail fournie.</p>
+                    <a href='index.php'>X</a>
+                    </div>";
+            }
+        }
+        if(isset($_GET['credit']) && $_GET['credit'] == "ok"){
+            echo "<div id='msg' class='copy'>
+                <img alt='Logo MMI D\'OR' src='images/favicon.png'>
+                <div id='copyright-contenu'>
+                    <h3>Développeurs :</h3>
+                    <nav>
+                        <a href='http://mathisdeplanque.fr'>Mathis Deplanque</a><br/>
+                        <a href='http://mathisdeplanque.fr'>Valentin Vanhaecke</a>
+                    </nav>
+                    <h3>Designer Web :</h3>
+                    <nav>
+                        <a href='#'>Victor Wallart</a>
+                    </nav>
+                </div>
+                <a href='index.php'>X</a>
+                </div>";
+        }
+    ?>
             
             <!-- Menu principal -->
             <div id="main-menu">
@@ -50,11 +93,11 @@
                 <!-- Menu navigation -->
                 <div id="menu-navigation">
                     <nav>
-                        <li class="active" id="li-home"><a href="#" id="accueil">MMI D'OR</a></li>
-                        <li id="li-films"><a href="#" id="films">FILMS</a></li>
-                        <li id="li-planning"><a href="#" id="planning">PLANNING</a></li>
-                        <li id="li-concours"><a href="#" id="concours">CONCOURS</a></li>
-                        <li id="li-contact"><a href="#" id="contact">CONTACT</a></li>
+                        <li class="active" id="li-home"><a href="#section-home" class="scroll-horizontal" id="accueil"></a></li>
+                        <li id="li-films"><a href="#section-films" class="scroll-horizontal" id="films"></a></li>
+                        <li id="li-planning"><a href="#section-planning" class="scroll-horizontal" id="planning"></a></li>
+                        <li id="li-concours"><a href="#section-competition" class="scroll-horizontal" id="concours"></a></li>
+                        <li id="li-contact"><a href="#section-contact" class="scroll-horizontal" id="contact"></a></li>
                     </nav>
                 </div>
                 
@@ -76,7 +119,7 @@
                 
                 <!-- Copyright -->
                 <div id="menu-copyright">
-                    <p id="copyright-text">©2021 MMI D'OR</p>
+                    <p id="copyright-text"><a href='index.php?credit=ok' id='copyright-link'>©2021 MMI D'OR</a></p>
                 </div>                
             </div>
             
@@ -84,7 +127,7 @@
             <div id="main-contenu">
                 <div id="contenu-body">
                     <div id="all-sections">
-                        <div id="section-home" class="current">
+                        <div id="section-home">
                             <div id="home-live-twitch">
                                 <div id="twitch-embed"></div>
                             </div>
@@ -102,8 +145,8 @@
                             </div>
                             <div id="arrive-scroll"></div>
                         </div>
-                        <div id="section-films" class="unable">
-                            <div class="body-section links">
+                        <div id="section-films">
+                            <div class="links">
                                 <h3 id="title-films" class="gold-underline">Tous les <span class="text-title-gold">films</span></h3>
                                 <div id="films-affichage">
                                     <div id="all-films">
@@ -144,15 +187,15 @@
                             </div> 
                             <div class="wrapper">
                                         <div class="popup">
-                                            <iframe id="popup" src="" width="400%" height="600rem">
+                                            <iframe id="popup" src="">
                                                 <p>Your browser does not support iframes.</p>
                                             </iframe>
-                                            <a href="#" class="close">X</a>
+                                            <a href="#section-films" class="close">X</a>
 
                                         </div>
                                     </div>            
                         </div>
-                        <div id="section-planning" class="unable">
+                        <div id="section-planning">
                             <div class="body-section">
                                 <h3 id="title-planning" class="gold-underline">Plan<span class="text-title-gold">ning</span></h3>
                                 
@@ -188,7 +231,7 @@
                                 </table>
                             </div>                            
                         </div>
-                        <div id="section-competition" class="unable">
+                        <div id="section-competition">
                             <h3 id="title-competition" class="gold-underline">Participez à notre <span class="text-title-gold">concours</span></h3>
                             
                             <div id="competition-contain">
@@ -211,7 +254,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="section-contact" class="unable">
+                        <div id="section-contact">
                             <div class="body-section">
                                 <h3 id="title-contact" class="gold-underline">Contact</h3>
                                 

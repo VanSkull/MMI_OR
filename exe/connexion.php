@@ -8,7 +8,7 @@
             $q->execute(array($_POST['mail'],$_POST['pwd']));
             if($line=$q->fetch()) {
                 $_SESSION['id'] = $line['id'];
-                $_SESSION['nom'] = $line['pseudo'];
+                $_SESSION['nom'] = $line['prenom'];
                 header("Location: ../index.php");
             }
     }
