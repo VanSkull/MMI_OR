@@ -33,9 +33,6 @@
         <!--<script src="js/jquery-3.5.1.min.js"></script>-->
     </head>
     <body>
-    <div id="main-contain">
-            <!-- Contenu principal -->
-            <div id="main-contenu">
             <?php
                 if(isset($_GET['error'])){
                     if($_GET['error'] == "incorrect"){
@@ -119,11 +116,18 @@
                             </div>";
                     }
                 }
+                if(isset($_GET['insc']) && $_GET['insc'] == "ok"){
+                    echo "<div id='msg'>
+                        <img alt='Logo MMI D\'OR' src='images/favicon.png'>
+                        <p>Ton inscription a bien été prise en compte, va vérifier tes mails !</p>
+                        <a href='connexion.php'>X</a>
+                        </div>";
+                }
             ?>
-                <div id="contenu-body">
-                    <div id="all-sections">
-                        <div id="section-home" class="current">
+            <a href="index.php" id="retour_accueil"></a>
+            <img src="../images/favicon.png" alt="Logo MMI D'OR" id="logo_connexion">
                             <div id="formulaire">
+                                <h1>Inscription</h1>
                              <form method="POST" action="exe/inscription.php">
                                 <input type="text" name="pseudo" placeholder="Pseudo"><br/>
                                 <input type="text" name="nom" placeholder="Nom"><br/>
@@ -139,13 +143,9 @@
                                 <input type="password" name="repwd" placeholder="Mot de passe"><br/>
                                 <input type="submit" value="S'inscrire">
                              </form>
-                            <h2>Déjà inscrit ?</h2>
+                            <h2>Déjà inscrit?</h2>
                              <input type="button" value="Se connecter" onclick="connect()">
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </body>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/connexion.js"></script>

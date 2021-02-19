@@ -8,11 +8,11 @@
             $q->execute(array($_POST['mail'],$_POST['pwd']));
             if($line=$q->fetch()) {
                 $_SESSION['id'] = $line['id'];
-                $_SESSION['nom'] = $line['prenom'];
-                header("Location: ../index.php");
+                $_SESSION['nom'] = $line['Prenom'];
+                header("Location: ../index.php?msg=connection");
             }
     }
     else{
-        header("Location: ../connexion.php?error='incorrect'");
+        header("Location: ../connexion.php?error=incorrect");
     }
 ?>

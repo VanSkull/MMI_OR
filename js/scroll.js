@@ -110,8 +110,6 @@ $(function() {
 });
 
 $(window).scroll(function(){
-        console.log($(window).scrollLeft());
-        console.log($('#section-competition').position().left);
         if($(window).scrollLeft() > $('#main-contenu').scrollLeft()) {
             $('#main-menu').addClass('small');
         } else {
